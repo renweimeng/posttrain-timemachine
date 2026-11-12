@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "posttrain-timemachine"
 version = "0.2.0"
 description = "A local-first debugger, counterfactual lab and regression system for GRPO"
-readme = "README.en.md"
+readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"
 dependencies = [
