@@ -1,0 +1,30 @@
+# Local environments and generated workspaces
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+node_modules/
+build/
+dist/
+.ptm/
+tmp/
+output/
+implement-stage/
+.coverage
+htmlcov/
+test-results/
+playwright-report/
+web/storybook-static/
+web/dist/
+# Local config and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db

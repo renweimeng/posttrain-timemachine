@@ -1,0 +1,21 @@
+---
+config:
+  theme: base
+  flowchart:
+    htmlLabels: false
+  themeVariables:
+    primaryColor: '#ecfdf5'
+    primaryTextColor: '#10243a'
+    primaryBorderColor: '#0f766e'
+    lineColor: '#64748b'
+    fontFamily: 'Arial, sans-serif'
+    fontSize: '16px'
+---
+flowchart LR
+    A["01 Capture"] --> B["02 Inspect"]
+    B --> C["03 Patch rewards"]
+    C --> D["04 Recompute"]
+    D --> E["05 Tests + reports"]
+    E -. "Retrain to validate" .-> A
+    classDef patch fill:#eef2ff,stroke:#6366f1,color:#312e81;
+    class C,D patch;

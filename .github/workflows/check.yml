@@ -1,0 +1,30 @@
+name: checks
+on: [push, pull_request]
+jobs:
+  core:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ['3.11', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv venv --python ${{ matrix.python }} .venv
+      - run: uv pip install --python .venv/bin/python -e '.[dev]'
+      - uses: actions/setup-node@v4
+        with: {node-version: '22', cache: npm, cache-dependency-path: web/package-lock.json}
+      - run: npm --prefix web ci --no-audit --no-fund
+      - run: npx --prefix web playwright install --with-deps chromium
+      - run: ./scripts/check.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: 'results-${{ matrix.os }}-${{ matrix.python }}', path: 'output/'}
+  trl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv venv --python 3.12 .venv
+      - run: uv pip install --python .venv/bin/python -e '.[dev,trl]'
+      - run: HF_HUB_OFFLINE=1 .venv/bin/pytest -m trl -v

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#081020"/><stop offset="1" stop-color="#14213b"/></linearGradient><linearGradient id="accent"><stop stop-color="#42e8cd"/><stop offset="1" stop-color="#aaa0ff"/></linearGradient><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#65e5d0" stroke-width="1.5"/></marker></defs>
+<rect width="1200" height="420" rx="24" fill="url(#bg)"/>
+<g stroke="#23334e" opacity=".5"><path d="M40 80H1160M40 150H1160M40 220H1160M40 290H1160M40 360H1160M100 40V380M300 40V380M500 40V380M700 40V380M900 40V380M1100 40V380"/></g>
+<g font-family="Arial,Helvetica,sans-serif"><rect x="42" y="40" width="132" height="30" rx="15" fill="#14332f" stroke="#317f75"/><text x="108" y="60" text-anchor="middle" fill="#75efdc" font-size="12" letter-spacing="2">LOCAL FIRST</text>
+<text x="42" y="131" fill="#eef4ff" font-size="45" font-weight="700">PostTrain</text><text x="42" y="184" fill="url(#accent)" font-size="45" font-weight="700">Time Machine</text>
+<text x="44" y="233" fill="#c1cde1" font-size="21">Debug the reward.</text><text x="44" y="263" fill="#c1cde1" font-size="21">Understand the signal.</text>
+<text x="44" y="355" fill="#8ca2bd" font-size="14">GRPO · FIXED ROLLOUTS · REPRODUCIBLE EVIDENCE</text>
+<rect x="538" y="72" width="276" height="150" rx="16" fill="#111e34" stroke="#334663"/><text x="560" y="105" fill="#ffcc8b" font-size="12" letter-spacing="2">SYNTHETIC EXAMPLE</text><text x="560" y="140" fill="#eff4ff" font-size="20">Wrong answer.</text><text x="560" y="169" fill="#eff4ff" font-size="20">Perfect format.</text><text x="560" y="199" fill="#a3b6ce" font-size="16">Reward: 0.70</text>
+<rect x="878" y="72" width="276" height="150" rx="16" fill="#111e34" stroke="#3c877e"/><text x="900" y="105" fill="#7af0dc" font-size="12" letter-spacing="2">PATCH THE RULE</text><text x="900" y="140" fill="#eff4ff" font-size="20">Correctness first.</text><text x="900" y="169" fill="#eff4ff" font-size="20">Inspect every delta.</text><text x="900" y="199" fill="#a3b6ce" font-size="16">Same saved answers.</text>
+<path d="M827 147H862" stroke="#65e5d0" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="538" y="255" width="616" height="94" rx="16" fill="#112a2b" stroke="#31766e"/><text x="562" y="289" fill="#92f5e4" font-size="18">Evidence → Reward patch → Reviewed tests</text><text x="562" y="321" fill="#adbecf" font-size="15">Measure the change. Keep the fix. Validate with retraining.</text>
+</g></svg>

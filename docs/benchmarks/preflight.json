@@ -1,0 +1,8 @@
+{
+  "local_workspace": true,
+  "reference_installed": true,
+  "torch": "2.9.0",
+  "cuda_available": false,
+  "cuda_device_count": 0,
+  "verified_deep_capture_device": "cpu"
+}

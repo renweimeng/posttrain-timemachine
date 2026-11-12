@@ -1,0 +1,22 @@
+---
+config:
+  theme: base
+  flowchart:
+    htmlLabels: false
+  themeVariables:
+    primaryColor: '#f0fdfa'
+    primaryTextColor: '#10243a'
+    primaryBorderColor: '#0f766e'
+    lineColor: '#64748b'
+    fontFamily: 'Arial, sans-serif'
+    fontSize: '16px'
+---
+flowchart LR
+    A["Answers + rewards"] --> B["Ranks + advantages"]
+    C["Token tensors"] --> D["Objective replay"]
+    E["Numeric checkpoint"] --> F["CPU step"]
+    B --> G["Tests + reports"]
+    D --> G
+    F --> H["Native weight check"]
+    classDef advanced fill:#eef2ff,stroke:#6366f1,color:#312e81;
+    class E,F,H advanced;

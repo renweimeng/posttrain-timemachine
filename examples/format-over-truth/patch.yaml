@@ -1,0 +1,8 @@
+spec_version: 1
+name: correctness-first-v1
+inputs: [correctness_score, format_score]
+terms:
+  - {id: correctness, type: identity, source: correctness_score, weight: 1.0}
+  - {id: format, type: identity, source: format_score, weight: 0.05}
+aggregation: sum
+missing_data: fail_group

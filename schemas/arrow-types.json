@@ -1,0 +1,40 @@
+{
+  "batches": {
+    "generation_batch_id": "string",
+    "generation_step": "int64"
+  },
+  "groups": {
+    "group_id": "string",
+    "generation_batch_id": "string",
+    "prompt_id": "string",
+    "expected_group_size": "int32"
+  },
+  "completions": {
+    "completion_id": "string",
+    "group_id": "string",
+    "sequence_index": "int32",
+    "reward_total": "double",
+    "reward_status": "string"
+  },
+  "metrics": {
+    "generation_step": "int64",
+    "name": "string",
+    "value": "double"
+  },
+  "optimizer_steps": {
+    "optimizer_step": "int64"
+  },
+  "tokens": {
+    "token_blob_id": "string",
+    "completion_id": "string",
+    "optimizer_step": "int64"
+  },
+  "objectives": {
+    "objective_id": "string",
+    "optimizer_step": "int64"
+  },
+  "trajectories": {
+    "trajectory_id": "string",
+    "completion_id": "string"
+  }
+}

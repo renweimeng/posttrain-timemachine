@@ -1,0 +1,8 @@
+spec_version: 1
+name: saved-token-proxy
+inputs: [token_proxy, has_final]
+terms:
+  - {id: token_proxy, type: identity, source: token_proxy, weight: 1.0}
+  - {id: format, type: boolean_bonus, source: has_final, weight: 0.1}
+aggregation: sum
+missing_data: fail_group

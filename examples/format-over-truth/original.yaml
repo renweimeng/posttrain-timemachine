@@ -1,0 +1,8 @@
+spec_version: 1
+name: original-format-heavy
+inputs: [correctness_score, format_score]
+terms:
+  - {id: correctness, type: identity, source: correctness_score, weight: 0.5}
+  - {id: format, type: identity, source: format_score, weight: 0.7}
+aggregation: sum
+missing_data: fail_group
