@@ -43,3 +43,5 @@ Use the optional `.[trl]` environment only when testing the pinned native refere
 Please provide versions, recipe, error code, reproduction command and a minimal shareable trace. Keep private workspaces, keys, original prompts and checkpoints out of public issues. Synthetic fixtures must be labeled; fixed-answer reward changes must not be presented as future model improvements.
 
 Mechanism figures have editable `.mmd` + `.md` sources in `figures/`. To regenerate, install Mermaid CLI and run `mmdc -i figures/ptm-workflow.mmd -o figures/ptm-workflow.png -b white`. Review arrow directions, clipping and labels before committing.
+
+Canvas FPS is recorded as a hardware-scoped benchmark artifact, not a universal shared-runner pass criterion. On a controlled machine, opt into a measured budget with `PTM_MIN_CANVAS_FPS=50 PTM_BROWSER_CHANNEL=chrome ./scripts/check.sh`. Keyboard scrolling and axe accessibility checks remain mandatory in ordinary CI.

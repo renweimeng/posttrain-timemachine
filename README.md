@@ -300,4 +300,4 @@ macOS 已安装 Chrome 时，可用 `PTM_BROWSER_CHANNEL=chrome ./scripts/check.
 
 如果它帮你发现了一个有意思的训练问题，欢迎给项目一个 Star，也欢迎在 Issue 里讲讲你的使用场景。
 
-[贡献指南](CONTRIBUTING.md) · [架构](docs/architecture.md) · [数值正确性](docs/numerical-correctness.md) · [功能边界](docs/requirements.md) · [数据来源](DATA_LICENSE.md) · [Apache-2.0](LICENSE)
+[贡献指南](CONTRIBUTING.md) · [架构](docs/architecture.md) · [数值正确性](docs/numerical-correctness.md) · [功能边界](docs/requirements.md) · [数据来源](DATA_LICENSE.md) · [Apache-2.0](LICENSE) · [Third-party notices](NOTICE)

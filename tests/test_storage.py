@@ -87,3 +87,26 @@ def test_integrity_and_path_boundary(tmp_path):
     path.write_text(json.dumps(data))
     with pytest.raises(PTMError, match="Checksum"):
         store.load("demo-format-truth")
+
+
+def test_parquet_durability_flush_has_a_writable_descriptor(tmp_path, monkeypatch):
+    """Windows _commit rejects read-only descriptors; probe write access on every platform."""
+    import os
+
+    import pyarrow as pa
+    import pyarrow.parquet as pq
+
+    from ptm.storage import write_parquet
+
+    real_fsync = os.fsync
+    flushed = []
+
+    def windows_compatible_flush(fd):
+        assert os.write(fd, b'') == 0  # No data changes; EBADF if opened read-only.
+        real_fsync(fd)
+        flushed.append(fd)
+
+    monkeypatch.setattr(os, 'fsync', windows_compatible_flush)
+    path = tmp_path / 'numeric.parquet'
+    write_parquet(path, [{'value': 7}], {'value': pa.int64()})
+    assert len(flushed) == 1 and pq.read_table(path).to_pylist()[0]['value'] == 7

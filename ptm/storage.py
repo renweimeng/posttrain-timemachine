@@ -59,7 +59,8 @@ def write_parquet(path: Path, rows: list[dict[str, Any]], columns: dict[str, pa.
         compression="zstd",
         row_group_size=128 if path.stem == "tokens" else 65536,
     )
-    with path.open("rb") as stream:
+    # Windows CRT _commit requires a writable descriptor; preserve the durability barrier.
+    with path.open("r+b") as stream:
         os.fsync(stream.fileno())
 
 

@@ -38,7 +38,7 @@ function VirtualTokenCanvas({rows,quantity,selected,onSelect}:{rows:SignalRow[];
   useEffect(()=>{draw();const observer=new ResizeObserver(draw);if(host.current)observer.observe(host.current);return()=>{observer.disconnect();cancelAnimationFrame(frame.current);};},[draw]);
   const locate=(x:number,y:number)=>{if(!host.current||!canvas.current)return 0;const rect=canvas.current.getBoundingClientRect();return Math.min(rows.length-1,Math.max(0,Math.floor((y-rect.top+host.current.scrollTop)/34)*columns.current+Math.floor((x-rect.left)/86)));};
   const inspect=rows[hover??selected];
-  return <><div className="token-canvas-scroll" ref={host} onScroll={()=>{cancelAnimationFrame(frame.current);frame.current=requestAnimationFrame(draw);}}>
+  return <><div className="token-canvas-scroll" tabIndex={0} role="region" aria-label="Scrollable captured tokens" ref={host} onScroll={()=>{cancelAnimationFrame(frame.current);frame.current=requestAnimationFrame(draw);}}>
     <div style={{height}}><canvas ref={canvas} role="img" aria-label={`${quantity} for ${rows.length} captured tokens. Masked tokens use dashed gray blocks. Use token index controls or the accessible table for exact values.`}
       style={{width:'100%',height:300,position:'sticky',top:0}} onClick={e=>onSelect(locate(e.clientX,e.clientY))}
       onMouseMove={e=>setHover(locate(e.clientX,e.clientY))} onMouseLeave={()=>setHover(null)}/></div></div>
